@@ -6,7 +6,7 @@ using BMICalculator;
 namespace BMICalculatorTest.UnitTests
 {
     
-    public class BMITest
+    public class BmiTest
     {
         [Fact]
         public void TestBMIValue_ValidValuesEntered_HappyPath()
@@ -39,7 +39,7 @@ namespace BMICalculatorTest.UnitTests
             BMICategory expectedResult = bmi.BMICategory;
 
             //Assert
-            Assert.Equal(expectedResult, BMICategory.Underweight);
+            Assert.Equal(BMICategory.Underweight, expectedResult);
         }
 
 
@@ -57,7 +57,7 @@ namespace BMICalculatorTest.UnitTests
             BMICategory expectedResult = bmi.BMICategory;
 
             //Assert
-            Assert.Equal(expectedResult, BMICategory.Normal);
+            Assert.Equal(BMICategory.Normal, expectedResult);
         }
 
         [Fact]
@@ -74,7 +74,7 @@ namespace BMICalculatorTest.UnitTests
             BMICategory expectedResult = bmi.BMICategory;
 
             //Assert
-            Assert.Equal(expectedResult, BMICategory.Overweight);
+            Assert.Equal(BMICategory.Overweight, expectedResult);
         }
 
         [Fact]
@@ -91,7 +91,7 @@ namespace BMICalculatorTest.UnitTests
             BMICategory expectedResult = bmi.BMICategory;
 
             //Assert
-            Assert.Equal(expectedResult, BMICategory.Obese);
+            Assert.Equal(BMICategory.Obese, expectedResult);
         }
 
         [Fact]
@@ -106,7 +106,7 @@ namespace BMICalculatorTest.UnitTests
             CalorieRange expectedResult = bmi.CalorieRange;
 
             //Assert
-            Assert.Equal(expectedResult, CalorieRange.Low);
+            Assert.Equal(CalorieRange.Low, expectedResult);
         }
 
         [Fact]
@@ -121,7 +121,7 @@ namespace BMICalculatorTest.UnitTests
             CalorieRange expectedResult = bmi.CalorieRange;
 
             //Assert
-            Assert.Equal(expectedResult, CalorieRange.Low);
+            Assert.Equal(CalorieRange.Low, expectedResult);
         }
 
         [Fact]
@@ -136,7 +136,7 @@ namespace BMICalculatorTest.UnitTests
             CalorieRange expectedResult = bmi.CalorieRange;
 
             //Assert
-            Assert.Equal(expectedResult, CalorieRange.Average);
+            Assert.Equal(CalorieRange.Average, expectedResult);
         }
 
         [Fact]
@@ -151,7 +151,7 @@ namespace BMICalculatorTest.UnitTests
             CalorieRange expectedResult = bmi.CalorieRange;
 
             //Assert
-            Assert.Equal(expectedResult, CalorieRange.Average);
+            Assert.Equal(CalorieRange.Average, expectedResult);
         }
 
         [Fact]
@@ -166,7 +166,7 @@ namespace BMICalculatorTest.UnitTests
             CalorieRange expectedResult = bmi.CalorieRange;
 
             //Assert
-            Assert.Equal(expectedResult, CalorieRange.High);
+            Assert.Equal(CalorieRange.High, expectedResult);
         }
 
         [Fact]
@@ -181,7 +181,7 @@ namespace BMICalculatorTest.UnitTests
             CalorieRange expectedResult = bmi.CalorieRange;
 
             //Assert
-            Assert.Equal(expectedResult, CalorieRange.High);
+            Assert.Equal(CalorieRange.High, expectedResult);
         }
 
         [Fact]
@@ -196,7 +196,7 @@ namespace BMICalculatorTest.UnitTests
             CalorieRange expectedResult = bmi.CalorieRange;
 
             //Assert
-            Assert.Equal(expectedResult, CalorieRange.Excessive);
+            Assert.Equal(CalorieRange.Excessive, expectedResult);
         }
 
         [Fact]
@@ -211,7 +211,7 @@ namespace BMICalculatorTest.UnitTests
             CalorieRange expectedResult = bmi.CalorieRange;
 
             //Assert
-            Assert.Equal(expectedResult, CalorieRange.Excessive);
+            Assert.Equal(CalorieRange.Excessive, expectedResult);
         }
     }
 }
