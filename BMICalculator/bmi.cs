@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 namespace BMICalculator
 {
     public enum BMICategory { Underweight, Normal, Overweight, Obese };
+    public enum CalorieRange { Low, Average, High, Excessive };
 
     public class BMI
     {
@@ -17,6 +18,13 @@ namespace BMICalculator
         // conversion factors from imperial to metric
         const double PoundsToKgs = 0.453592;
         const double InchestoMetres = 0.0254;
+
+        [Display(Name = "Gender")]
+        public String PersonGender { get; set; }
+
+        [Display(Name = "Calories Per Day")]
+        [Range(0, 10000, ErrorMessage = "Calorie intake must be between 0 and 10000")]
+        public int CaloriesIntake { get; set; }
 
         [Display(Name = "Weight - Stones")]
         [Range(5, 50, ErrorMessage = "Stones must be between 5 and 50")]                              // max 50 stone
@@ -80,6 +88,47 @@ namespace BMICalculator
                 else
                 {
                     return BMICategory.Obese;
+                }
+            }
+        }
+
+        public CalorieRange CalorieRange
+        {
+            get
+            {
+                int calories = this.CaloriesIntake;
+
+                if (this.PersonGender == "male" && calories > 0 && calories < 2000)
+                {
+                    return CalorieRange.Low;
+                }
+                else if (this.PersonGender == "female" && calories > 0 && calories < 1700)
+                {
+                    return CalorieRange.Low;
+                }
+                else if (this.PersonGender == "male" && calories > 2000 && calories < 3000)
+                {
+                    return CalorieRange.Average;
+                }
+                else if (this.PersonGender == "female" && calories > 1700 && calories < 2600)
+                {
+                    return CalorieRange.Average;
+                }
+                else if (this.PersonGender == "male" && calories > 3000 && calories < 4000)
+                {
+                    return CalorieRange.High;
+                }
+                else if (this.PersonGender == "female" && calories > 2600 && calories < 3500)
+                {
+                    return CalorieRange.High;
+                }
+                else if (this.PersonGender == "male" && calories > 4000 && calories < 10000)
+                {
+                    return CalorieRange.Excessive;
+                }
+                else 
+                {
+                    return CalorieRange.Excessive;
                 }
             }
         }
