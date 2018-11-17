@@ -1,0 +1,41 @@
+﻿@page
+@model AboutModel
+
+@{
+    ViewData["Title"] = "BMI calculator";
+}
+
+<h2>Calorie Range Calculator</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="BMI.PersonGender" class="control-label"></label>
+                <input asp-for="BMI.PersonGender" class="form-control" />
+                <span asp-validation-for="BMI.PersonGender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BMI.CaloriesIntake" class="control-label"></label>
+                <input asp-for="BMI.CaloriesIntake" class="form-control" />
+                <span asp-validation-for="BMI.CaloriesIntake" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Calculate Calorie Range" class="btn btn-default" />
+            </div>
+
+            @if (Request.Method == "POST")
+            {
+                <div>
+                    @Html.DisplayNameFor(m => m.BMI.CalorieRange)
+                    @Html.DisplayFor(m => m.BMI.CalorieRange)
+                </div>
+            }
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

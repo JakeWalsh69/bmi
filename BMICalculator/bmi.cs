@@ -98,31 +98,31 @@ namespace BMICalculator
             {
                 int calories = this.CaloriesIntake;
 
-                if (this.PersonGender == "male" && calories > 0 && calories < 2000)
+                if (this.PersonGender == "male" && calories >= 0 && calories < 2000)
                 {
                     return CalorieRange.Low;
                 }
-                else if (this.PersonGender == "female" && calories > 0 && calories < 1700)
+                else if (this.PersonGender == "female" && calories >= 0 && calories < 1700)
                 {
                     return CalorieRange.Low;
                 }
-                else if (this.PersonGender == "male" && calories > 2000 && calories < 3000)
+                else if (this.PersonGender == "male" && calories >= 2000 && calories < 3000)
                 {
                     return CalorieRange.Average;
                 }
-                else if (this.PersonGender == "female" && calories > 1700 && calories < 2600)
+                else if (this.PersonGender == "female" && calories >= 1700 && calories < 2600)
                 {
                     return CalorieRange.Average;
                 }
-                else if (this.PersonGender == "male" && calories > 3000 && calories < 4000)
+                else if (this.PersonGender == "male" && calories >= 3000 && calories < 4000)
                 {
                     return CalorieRange.High;
                 }
-                else if (this.PersonGender == "female" && calories > 2600 && calories < 3500)
+                else if (this.PersonGender == "female" && calories >= 2600 && calories < 3500)
                 {
                     return CalorieRange.High;
                 }
-                else if (this.PersonGender == "male" && calories > 4000 && calories < 10000)
+                else if (this.PersonGender == "male" && calories >= 4000 && calories < 10000)
                 {
                     return CalorieRange.Excessive;
                 }
